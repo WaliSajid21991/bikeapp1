@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<%=image_tag("BIkelogo.jpg")%>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @cycle.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @cycle.lastname %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @cycle.manufacturer %>
+</p>
+
+<p>
+  <strong>Your Total Cost would be:</strong>
+  <%= @cycle.cost %> €
+</p>
+
+
+
+<p>
+  <strong></strong>
+  <%= @cycle.color %>
+</p>
+
+<%= link_to 'Edit', edit_cycle_path(@cycle) %> |
+<%= link_to 'Back', cycles_path %>
+<p>
+<%= link_to 'Search bike', cycles_path %>
+</p>

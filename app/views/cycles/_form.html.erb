@@ -1,0 +1,60 @@
+<%= form_for(cycle) do |f| %>
+  <% if cycle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cycle.errors.count, "error") %> prohibited this cycle from being saved:</h2>
+
+      <ul>
+      <% cycle.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :firstname %>
+    <%= f.text_field :firstname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lastname %>
+    <%= f.text_field :lastname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Age %>
+    <%= f.text_field :manufacturer %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Weight %>
+    <%= f.text_field :cost %>
+  </div>
+
+  <div class="field">
+    <%= f.label :destination %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :origin %>
+    <%= f.text_field :color %>
+  </div>
+
+  <div class="field">
+Reflectorjacket:
+<%= check_box_tag 'cycle[reflectorjacket]', 'reflectorjacket' %>
+</div>
+<div class="field">
+Gloves:
+<%= check_box_tag 'cycle[gloves]', 'gloves' %>
+</div>
+<div class="field">
+Helmet:
+<%= check_box_tag 'cycle[helmet]', 'helmet' %>
+</div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bike</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
+  </head>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+ <body>
+  <div id="header">
+    
+    
+  </div>
+  <div id="menu">
+    <div id="navbar">
+      <ul>
+        <li><a <%= link_to 'Rent A Bike Now', new_cycle_path %></a></li>
+        <li><a <%= link_to "About Us", "http://www.dublinbikes.ie/", :target => "_blank" %>
+</a></li>
+<li><a <%= link_to "Stations near me ", "https://www.google.co.in/webhp?sourceid=chrome-instant&rlz=1C1CHBD_enIN721IN721&ion=1&espv=2&ie=UTF-8#q=dublin+bike+stations&rflfq=1&rlha=0&rllag=53340719,-6258924,1219&tbm=lcl&tbs=lf_msr:-1,lf_od:-1,lf_oh:-1,lf_pqs:EAE,lf:1,lf_ui:2&*", :target => "_blank" %>
+</a></li>
+      
+        <li><%= link_to 'Sign in', new_user_session_path %></li>
+   
+      </ul>
+    </div>
+  </div>
+  <div id="container">
+    <div id="content">
+      <p class="notice"><%= flash[:notice] %></p>
+      <%= yield %>
+    </div>
+    <div id="first-column">
+        
+        <div class="searchbox">
+          
+          <strong><li><%= link_to 'Search bike ', cycles_path %></li></strong>
+        </div>
+    </div>
+  </div>
+  <div id="footer">
+    <h6 class="footertext">&copy; Online BikeApp&trade; 2017</h6>
+   
+  </div>
+
+</body>
+          
+        
+    <%= yield %>
+    
+    <% if user_signed_in? %>
+<div>Signed in as... <%= current_user.email %>
+(<%= link_to 'Sign out', destroy_user_session_path,
+:method => :delete%>)
+</div>
+<% else %>
+<%= link_to 'Register', new_user_registration_path %> or
+<%= link_to 'Sign in', new_user_session_path %>
+<% end %>
+  </body>
+</html>

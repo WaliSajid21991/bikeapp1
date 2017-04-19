@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dublin Bike Booking</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="header">
+    
+  </div>
+  <div id="menu">
+    <div id="navbar">
+      <ul>
+        <li><a href="/items">Book a Bike</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+        <li><a href="/admin">Login</a></li>
+        
+      </ul>
+    </div>
+  </div>
+  <div id="container">
+    <div id="content">
+      <p class="notice"><%= flash[:notice] %></p>
+      <%= yield %>
+    </div>
+    <div id="first-column">
+        <div class="loginbox">
+          <h2 class="Boxheaders">Login here...</h2>
+        </div>
+        <div class="searchbox">
+          <h2 class="BoxHeaders">Search bike</h2>
+        </div>
+    </div>
+  </div>
+  <div id="footer">
+    <h6 class="footertext">&copy; Online BikeApp&trade;</h6>
+  </div>
+
+</body>
+</html>
